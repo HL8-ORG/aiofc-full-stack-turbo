@@ -1,0 +1,20 @@
+{
+	"$schema": "https://biomejs.dev/schemas/2.0.6/schema.json",
+	"files": {
+		"includes": [
+			"**",
+			"!**/dist/**/*",
+			"!**/out/**/*",
+			"!**/build/**/*",
+			"!**/coverage/**/*",
+			"!**/.vscode/**/*",
+			"!**/.idea/**/*",
+			"!**/.atom/**/*",
+			"!**/.yarn/**/*",
+			"!**/.next/**/*",
+			"!**/*.pnp.*",
+			"!**/.nx/"
+		],
+		"ignoreUnknown": true
+	}
+}

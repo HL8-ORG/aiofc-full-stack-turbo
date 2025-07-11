@@ -1,0 +1,9 @@
+{
+	"$schema": "https://biomejs.dev/schemas/2.0.6/schema.json",
+	"extends": [
+		"@repo/biome-config",
+		"@repo/biome-config/react",
+		"@repo/biome-config/nestjs",
+		"@repo/biome-config/ignore"
+	]
+}

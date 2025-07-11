@@ -1,0 +1,42 @@
+{
+	"name": "aifc-full-stack-turbo",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"build": "turbo build",
+		"dev": "turbo dev",
+		"lint": "biome lint",
+		"format": "biome format",
+		"lib:fix": "pnpm dlx sherif@latest --fix",
+		"clean": "git clean -xdf node_modules",
+		"prepare": "husky install"
+	},
+	"config": {
+		"commitizen": {
+			"path": "node_modules/cz-customizable"
+		},
+		"cz-customizable": {
+			"config": "cz-config.cjs"
+		}
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.0.6",
+		"@repo/biome-config": "workspace:*",
+		"@turbo/gen": "^2.5.3",
+		"@types/node": "^22.15.21",
+		"commitizen": "^4.3.1",
+		"cz-customizable": "^7.4.0",
+		"husky": "^8.0.3",
+		"tsup": "^8.5.0",
+		"tsx": "^4.20.3",
+		"turbo": "^2.5.3",
+		"typescript": "^5.8.3"
+	},
+	"engines": {
+		"node": ">=18"
+	},
+	"packageManager": "pnpm@10.12.1",
+	"type": "module",
+	"private": true
+}
