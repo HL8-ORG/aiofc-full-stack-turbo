@@ -1,9 +1,72 @@
 {
 	"$schema": "https://biomejs.dev/schemas/2.0.6/schema.json",
-	"extends": [
-		"@repo/biome-config",
-		"@repo/biome-config/react",
-		"@repo/biome-config/nestjs",
-		"@repo/biome-config/ignore"
-	]
+	"extends": ["@repo/biome-config/base", "@repo/biome-config/ignore"],
+	"files": {
+		"includes": ["**", "!./turbo.json", "!./commitlint.config.js", "!./cz-config.js", "!./pnpm-lock.yaml"]
+	},
+	"overrides": [
+		{
+			"includes": ["**/apps/backend/**"],
+			"javascript": {
+				"parser": {
+					"unsafeParameterDecoratorsEnabled": true
+				}
+			}
+		},
+		{
+			"includes": ["**/apps/frontend/**"],
+			"javascript": {
+				"jsxRuntime": "transparent"
+			},
+			"css": {
+				"formatter": {
+					"enabled": true,
+					"indentWidth": 2,
+					"indentStyle": "tab",
+					"lineEnding": "lf",
+					"lineWidth": 120,
+					"quoteStyle": "double"
+				}
+			},
+			"linter": {
+				"rules": {
+					"a11y": {},
+					"nursery": {
+						"useSortedClasses": "error"
+					},
+					"correctness": {
+						"noUnknownFunction": "error",
+						"noUnknownUnit": "error"
+					},
+					"security": {
+						"noDangerouslySetInnerHtml": "error",
+						"noDangerouslySetInnerHtmlWithChildren": "error"
+					},
+					"style": {
+						"noImplicitBoolean": "off",
+						"useFragmentSyntax": "error"
+					},
+					"suspicious": {
+						"noSuspiciousSemicolonInJsx": "error"
+					}
+				}
+			}
+		}
+	],
+	"linter": {
+		"rules": {
+			"style": {
+				"noParameterAssign": "error",
+				"useAsConstAssertion": "error",
+				"useDefaultParameterLast": "error",
+				"useEnumInitializers": "error",
+				"useSelfClosingElements": "error",
+				"useSingleVarDeclarator": "error",
+				"noUnusedTemplateLiteral": "error",
+				"useNumberNamespace": "error",
+				"noInferrableTypes": "error",
+				"noUselessElse": "error"
+			}
+		}
+	}
 }

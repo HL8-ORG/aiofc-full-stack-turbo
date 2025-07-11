@@ -1,25 +1,11 @@
 # TSConfig
 
-### A base TSConfig for working with Node 20.
+基于https://github.com/tsconfig/bases开始配置项目的tsconifg.json
 
-Add the package to your `"devDependencies"`:
+我们的项目配置实际上基于`@tsconfig/node20`继承和扩展
 
-```sh
-npm install --save-dev @tsconfig/node20
-yarn add --dev @tsconfig/node20
+具体如下：
 ```
-
-Add to your `tsconfig.json`:
-
-```json
-"extends": "@tsconfig/node20/tsconfig.json"
-```
-
----
-
-The `tsconfig.json`: 
-
-```jsonc
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "_version": "20.1.0",
@@ -35,7 +21,21 @@ The `tsconfig.json`:
     "moduleResolution": "node16"
   }
 }
+```
+扩展为`base.json`
 
 ```
-
-You can find the [code here](https://github.com/tsconfig/bases/blob/master/bases/node20.json).
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "compilerOptions": {
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "strict": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "target": "es2022",
+    "skipLibCheck": true
+  }
+}
+```

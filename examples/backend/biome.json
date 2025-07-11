@@ -1,0 +1,14 @@
+{
+	"$schema": "https://biomejs.dev/schemas/2.0.6/schema.json",
+	"extends": ["@nedcloarbr/biome-config/nestjs"],
+	"formatter": {
+		"formatWithErrors": true
+	},
+	"linter": {
+		"rules": {
+			"style": {
+				"useImportType": "off"
+			}
+		}
+	}
+}
